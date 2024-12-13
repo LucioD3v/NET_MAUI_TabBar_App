@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="StarWars_TabBar.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:StarWars_TabBar"
+    xmlns:Views ="clr-namespace:StarWars_TabBar.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="StarWars_TabBar">
+
+    <TabBar>
+        <Tab Title="Peoples" Icon="cat.png">
+            <ShellContent ContentTemplate="{DataTemplate Views:PeoplePage}" />
+        </Tab>
+        <Tab Title="Ships" Icon="dog.png">
+            <ShellContent ContentTemplate="{DataTemplate Views:StarShipPage}" />
+        </Tab>
+        <Tab Title="Planets" Icon="dog.png">
+            <ShellContent ContentTemplate="{DataTemplate Views:PlanetPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>
