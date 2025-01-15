@@ -3,10 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StarWars_TabBar.Views.StarShipPage"
              Title="StarShips">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to StarShip Page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    
+    <ScrollView>
+        <VerticalStackLayout
+      Padding="30,10"
+      Spacing="25"
+      VerticalOptions="Start">
+
+            <Button
+          Text="Get StarShips" 
+          Clicked="OnDataClicked"
+          HorizontalOptions="Fill" />
+
+            <ActivityIndicator 
+                 x:Name="loading"
+                 HeightRequest="30"
+                 Color="Blue"
+                 IsRunning="True"
+                 IsVisible="False"/>
+
+            <ListView x:Name="listViewStarShips">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Label Text="{Binding name}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
